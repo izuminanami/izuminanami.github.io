@@ -38,7 +38,7 @@
             transition: background-color 0.3s, transform 0.2s;
         }
         .tabs button.active, .top-screen-buttons button.active {
-            background-color: #555; /* ボタンが選択されている間、明るくする */
+            background-color: #555;
         }
         .tabs button:hover, .top-screen-buttons button:hover {
             background-color: #555;
@@ -52,7 +52,7 @@
         }
         .tab-content.active {
             opacity: 1;
-            max-height: 1000px; /* 高さはコンテンツのサイズに合わせて調整 */
+            max-height: 1000px;
         }
         .tab-content.hidden {
             display: none;
@@ -60,7 +60,7 @@
         .tab-content img {
             margin: 10px 5px;
             display: inline-block;
-            max-width: 30%; /* スクリーンショットを小さく */
+            max-width: 30%;
             height: auto;
         }
         .photo-upload {
@@ -95,12 +95,12 @@
         .profile p {
             margin: 10px 0;
             font-size: 1.2em;
-            border-top: none; /* 上の線を無くす */
-            border-bottom: none; /* 下の線も無くす */
+            border-top: none;
+            border-bottom: none;
             display: inline-block;
             padding-bottom: 5px;
             padding-top: 5px;
-            width: 100px; /* 線の幅を調整 */
+            width: 100px;
         }
         .photo-grid {
             display: flex;
@@ -111,11 +111,16 @@
             max-width: 30%;
             margin-bottom: 10px;
         }
+        .profile-header {
+            text-align: left; /* 左寄せに変更 */
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align: center;">Profile</h1>
+        <h1 class="profile-header">Profile</h1>
         <div class="profile">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/Imymemine.png" alt="プロフィール画像">
             <h2>Izumi Nanami</h2>
@@ -145,7 +150,7 @@
             <h2>概要</h2>
             <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
             <h2>スクリーンショット</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット" style="max-width: 60%; height: auto;"> <!-- スクリーンショットを大きく -->
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット" style="max-width: 60%; height: auto;">
             <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
             </a>
@@ -170,13 +175,11 @@
 
             // トップ画面の表示/非表示
             if (tabId && currentTab && currentTab.id === tabId) {
-                // 現在表示されているタブがクリックされた場合、隠す
                 currentTab.classList.remove('active');
                 document.querySelectorAll('.tabs button').forEach(button => {
                     button.classList.remove('active');
                 });
             } else {
-                // タブコンテンツの表示/非表示
                 document.querySelectorAll('.tab-content').forEach(content => {
                     content.classList.remove('active');
                 });
@@ -190,7 +193,6 @@
                 }
             }
         }
-        // デフォルトでトップ画面を表示
         showTab(null);
     </script>
 </body>
