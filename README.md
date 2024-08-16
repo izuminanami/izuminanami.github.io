@@ -36,6 +36,9 @@
             opacity: 1;
             max-height: 1000px; /* 高さはコンテンツのサイズに合わせて調整 */
         }
+        .tab-content.hidden {
+            display: none;
+        }
         .tab-content img {
             margin: 10px 0;
             display: block;
@@ -53,15 +56,38 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .top-screen {
+            display: block;
+            text-align: center;
+            margin: 20px;
+        }
+        .top-screen button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .top-screen button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <div class="tabs">
-        <button onclick="showTab('believe')" class="active">Believe.</button>
-        <button onclick="showTab('okashu')">おかしゅー道場</button>
+    <div class="top-screen" id="top-screen">
+        <h1>アプリ紹介</h1>
+        <button onclick="showTab(null)">トップ画面</button>
     </div>
 
-    <div id="believe" class="tab-content active">
+    <div class="tabs" id="tabs">
+        <button onclick="showTab('believe')">Believe.</button>
+        <button onclick="showTab('okashu')">おかしゅー道場</button>
+        <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
+    </div>
+
+    <div id="believe" class="tab-content">
         <h1>Believe.</h1>
         <h2>概要</h2>
         <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
@@ -71,10 +97,6 @@
         <a href="https://apps.apple.com/jp/app/believe/id6480430036">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
         </a>
-        <div class="photo-upload">
-            <label for="believe-photo-upload">日常の写真をアップロード</label>
-            <input type="file" id="believe-photo-upload" accept="image/*">
-        </div>
     </div>
 
     <div id="okashu" class="tab-content">
@@ -86,9 +108,14 @@
         <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
         </a>
+    </div>
+
+    <div id="daily-photo" class="tab-content">
+        <h1>日常の写真アップロード</h1>
+        <p>ここに日常の写真をアップロードできます。</p>
         <div class="photo-upload">
-            <label for="okashu-photo-upload">日常の写真をアップロード</label>
-            <input type="file" id="okashu-photo-upload" accept="image/*">
+            <label for="daily-photo-upload">日常の写真をアップロード</label>
+            <input type="file" id="daily-photo-upload" accept="image/*">
         </div>
     </div>
 
@@ -96,13 +123,24 @@
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
+                tab.classList.add('hidden');
             });
             document.querySelectorAll('.tabs button').forEach(function(button) {
                 button.classList.remove('active');
             });
-            document.getElementById(tabId).classList.add('active');
-            document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            if (tabId) {
+                document.getElementById(tabId).classList.remove('hidden');
+                document.getElementById(tabId).classList.add('active');
+                document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
+                document.getElementById('top-screen').style.display = 'none';
+                document.getElementById('tabs').style.display = 'flex';
+            } else {
+                document.getElementById('top-screen').style.display = 'block';
+                document.getElementById('tabs').style.display = 'none';
+            }
         }
+        // デフォルトでトップ画面を表示
+        showTab(null);
     </script>
 </body>
 </html>
