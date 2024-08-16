@@ -102,9 +102,12 @@
         .profile p {
             margin: 10px 0;
             font-size: 1.2em;
-            border-bottom: 2px solid #444; /* 線の色を指定 */
+            border-bottom: none; /* 下の線を無くす */
+            border-top: 2px solid #444; /* 上の線を短くする */
             display: inline-block;
             padding-bottom: 5px;
+            padding-top: 5px;
+            width: 100px; /* 線の幅を調整 */
         }
     </style>
 </head>
@@ -159,12 +162,13 @@
         <div id="daily-photo" class="tab-content">
             <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Photograph</h1>
-            <h2>日常の写真</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato" style="max-width: 30%;">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree" style="max-width: 30%;">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro" style="max-width: 30%;">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago" style="max-width: 30%;">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came" style="max-width: 30%;">
+            </div>
         </div>
     </div>
 
@@ -177,14 +181,8 @@
             // コンテンツの表示
             document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
-                tab.classList.add('hidden');
             });
-            document.querySelectorAll('.tabs button').forEach(function(button) {
-                button.classList.remove('active');
-            });
-
             if (tabId) {
-                document.getElementById(tabId).classList.remove('hidden');
                 document.getElementById(tabId).classList.add('active');
                 document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
                 document.getElementById('top-screen-buttons').style.display = 'none'; // ボタンを隠す
