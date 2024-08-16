@@ -64,8 +64,8 @@
         }
         .tab-content img {
             margin: 10px 0;
-            display: block;
-            max-width: 100%;
+            display: inline-block;
+            max-width: 48%;
             height: auto;
         }
         .photo-upload {
@@ -83,11 +83,30 @@
             display: inline-block;
             text-align: center;
         }
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .profile h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="top-screen" id="top-screen">
+            <div class="profile">
+                <img src="https://via.placeholder.com/120" alt="プロフィール画像">
+                <h2>ユーザー名</h2>
+                <p>プロフィールの説明がここに入ります。簡単な自己紹介やスキルなどを記載できます。</p>
+            </div>
             <h1>アプリ紹介</h1>
             <div class="top-screen-buttons">
                 <button onclick="showTab('believe')">Believe.</button>
@@ -140,16 +159,15 @@
 
     <script>
         function showTab(tabId) {
+            // コンテンツを隠す
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
+                tab.classList.remove('active');
+                tab.classList.add('hidden');
+            });
+            // トップ画面を表示/隠す
             if (tabId) {
                 document.getElementById('top-screen').style.display = 'none';
                 document.getElementById('tabs').style.display = 'flex';
-                document.querySelectorAll('.tab-content').forEach(function(tab) {
-                    tab.classList.remove('active');
-                    tab.classList.add('hidden');
-                });
-                document.querySelectorAll('.tabs button').forEach(function(button) {
-                    button.classList.remove('active');
-                });
                 document.getElementById(tabId).classList.remove('hidden');
                 document.getElementById(tabId).classList.add('active');
                 document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
