@@ -4,119 +4,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>創作物紹介</title>
     <style>
+        /* カスタムフォントや色の指定 */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
+            background-color: #181818;
+            color: #f1f1f1;
         }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background: #2c2c2c;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: #242424;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        .profile h2 {
+            font-size: 2em;
+        }
+        p {
+            line-height: 1.6;
+            color: #ddd;
         }
         .tabs, .top-screen-buttons {
             display: flex;
-            border-bottom: 2px solid #3a3a3a;
+            justify-content: space-around;
+            border-bottom: 2px solid #444;
             margin-bottom: 20px;
         }
         .tabs button, .top-screen-buttons button, .back-button {
-            flex: 1;
-            padding: 12px;
+            padding: 12px 20px;
             cursor: pointer;
-            background-color: #444;
-            color: #e0e0e0;
-            border: none;
-            border-radius: 5px;
+            background-color: #333;
+            color: #ffcc00;
+            border: 2px solid #ffcc00;
+            border-radius: 50px;
             text-align: center;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .tabs button.active, .top-screen-buttons button.active {
-            background-color: #444; /* ボタンが一度クリックされた後も色が変わらないように */
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
         .tabs button:hover, .top-screen-buttons button:hover, .back-button:hover {
-            background-color: #555;
-            transform: translateY(-2px);
+            background-color: #ffcc00;
+            color: #242424;
+            transform: translateY(-3px);
+        }
+        .tabs button.active {
+            background-color: #ffcc00;
+            color: #242424;
         }
         .back-button {
-            background-color: #666;
-            margin: 10px 0;
-        }
-        .back-button:hover {
-            background-color: #555;
+            background-color: #ffcc00;
+            color: #242424;
+            display: block;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 50px;
         }
         .tab-content {
             opacity: 0;
             max-height: 0;
             overflow: hidden;
-            transition: opacity 0.3s, max-height 0.3s;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
         }
         .tab-content.active {
             opacity: 1;
-            max-height: 1000px; /* 高さはコンテンツのサイズに合わせて調整 */
-        }
-        .tab-content.hidden {
-            display: none;
+            max-height: 1000px;
         }
         .tab-content img {
-            margin: 10px 5px;
+            margin: 10px;
             display: inline-block;
-            max-width: 35%; /* スクリーンショットをさらに小さく */
+            max-width: 30%;
             height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
-        .photo-upload {
-            margin-top: 20px;
-        }
-        .photo-upload input[type="file"] {
-            display: none;
-        }
-        .photo-upload label {
-            padding: 12px;
-            background-color: #444;
-            color: #e0e0e0;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block;
-            text-align: center;
+        .tab-content img:hover {
+            transform: scale(1.05);
         }
         .profile {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
         .profile img {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-        }
-        .profile h2 {
-            margin: 10px 0;
-            font-size: 1.5em;
-        }
-        .profile p {
-            margin: 10px 0;
-            font-size: 1.2em;
-            border-bottom: none; /* 下の線を無くす */
-            border-top: none; /* 上の線を無くす */
-            display: inline-block;
-            padding-bottom: 5px;
-            padding-top: 5px;
-            width: 100px; /* 線の幅を調整 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
         .photo-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            gap: 10px;
         }
         .photo-grid img {
-            max-width: 30%;
-            margin-bottom: 10px;
+            max-width: 32%;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -163,7 +161,7 @@
             <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
             <h2>スクリーンショット</h2>
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット">
-            <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
+            <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
             </a>
         </div>
@@ -172,9 +170,9 @@
             <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Photograph</h1>
             <div class="photo-grid">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
@@ -184,11 +182,8 @@
 
     <script>
         function showTab(tabId) {
-            // トップ画面の表示/非表示
-            document.getElementById('top-screen').style.display = tabId ? 'none' : 'block';
+            // タブ切り替え
             document.getElementById('tabs').style.display = tabId ? 'flex' : 'none';
-
-            // 各タブコンテンツの表示/非表示
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
@@ -198,9 +193,9 @@
             if (tabId) {
                 document.getElementById(tabId).classList.add('active');
                 document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
-                document.getElementById('top-screen-buttons').style.display = 'none'; // ボタンを隠す
+                document.getElementById('top-screen-buttons').style.display = 'none'; // トップ画面ボタンを隠す
             } else {
-                document.getElementById('top-screen-buttons').style.display = 'flex'; // ボタンを再表示
+                document.getElementById('top-screen-buttons').style.display = 'flex'; // トップ画面ボタンを表示
             }
         }
         // デフォルトでトップ画面を表示
