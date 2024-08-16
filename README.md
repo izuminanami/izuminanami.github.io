@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -9,11 +10,11 @@
             margin: 0;
             padding: 0;
         }
-        .tabs {
+        .tabs, .top-screen-buttons {
             display: flex;
             border-bottom: 2px solid #ccc;
         }
-        .tabs button {
+        .tabs button, .top-screen-buttons button {
             flex: 1;
             padding: 10px;
             cursor: pointer;
@@ -22,7 +23,7 @@
             border-bottom: 2px solid transparent;
             transition: background-color 0.3s, border-bottom 0.3s;
         }
-        .tabs button.active {
+        .tabs button.active, .top-screen-buttons button.active {
             background-color: #fff;
             border-bottom: 2px solid #007BFF;
         }
@@ -61,7 +62,10 @@
             text-align: center;
             margin: 20px;
         }
-        .top-screen button {
+        .top-screen-buttons {
+            margin: 20px;
+        }
+        .top-screen-buttons button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
@@ -70,7 +74,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .top-screen button:hover {
+        .top-screen-buttons button:hover {
             background-color: #0056b3;
         }
     </style>
@@ -78,10 +82,14 @@
 <body>
     <div class="top-screen" id="top-screen">
         <h1>アプリ紹介</h1>
-        <button onclick="showTab(null)">トップ画面</button>
+        <div class="top-screen-buttons">
+            <button onclick="showTab('believe')">Believe.</button>
+            <button onclick="showTab('okashu')">おかしゅー道場</button>
+            <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
+        </div>
     </div>
 
-    <div class="tabs" id="tabs">
+    <div class="tabs" id="tabs" style="display: none;">
         <button onclick="showTab('believe')">Believe.</button>
         <button onclick="showTab('okashu')">おかしゅー道場</button>
         <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
@@ -121,19 +129,26 @@
 
     <script>
         function showTab(tabId) {
+            // トップ画面を隠す
+            document.getElementById('top-screen').style.display = 'none';
+            document.getElementById('tabs').style.display = 'flex';
+            
+            // 全てのタブコンテンツを隠す
             document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
                 tab.classList.add('hidden');
             });
+
+            // 全てのタブボタンを非アクティブにする
             document.querySelectorAll('.tabs button').forEach(function(button) {
                 button.classList.remove('active');
             });
+
+            // 選択されたタブを表示する
             if (tabId) {
                 document.getElementById(tabId).classList.remove('hidden');
                 document.getElementById(tabId).classList.add('active');
                 document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
-                document.getElementById('top-screen').style.display = 'none';
-                document.getElementById('tabs').style.display = 'flex';
             } else {
                 document.getElementById('top-screen').style.display = 'block';
                 document.getElementById('tabs').style.display = 'none';
