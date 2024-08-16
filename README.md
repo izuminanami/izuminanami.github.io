@@ -67,7 +67,7 @@
         .tab-content img {
             margin: 10px 5px;
             display: inline-block;
-            max-width: 45%; /* スクリーンショットを少し小さく */
+            max-width: 35%; /* スクリーンショットをさらに小さく */
             height: auto;
         }
         .photo-upload {
@@ -172,6 +172,7 @@
             <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Photograph</h1>
             <div class="photo-grid">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
@@ -186,8 +187,8 @@
             // トップ画面の表示/非表示
             document.getElementById('top-screen').style.display = tabId ? 'none' : 'block';
             document.getElementById('tabs').style.display = tabId ? 'flex' : 'none';
-            
-            // コンテンツの表示
+
+            // 各タブコンテンツの表示/非表示
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
