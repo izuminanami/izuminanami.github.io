@@ -38,7 +38,7 @@
             transition: background-color 0.3s, transform 0.2s;
         }
         .tabs button.active, .top-screen-buttons button.active {
-            background-color: #444; /* ボタンが一度クリックされた後も色が変わらないように */
+            background-color: #555; /* ボタンが選択されている間、明るくする */
         }
         .tabs button:hover, .top-screen-buttons button:hover {
             background-color: #555;
@@ -115,6 +115,7 @@
 </head>
 <body>
     <div class="container">
+        <h1 style="text-align: center;">Profile</h1>
         <div class="profile">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/Imymemine.png" alt="プロフィール画像">
             <h2>Izumi Nanami</h2>
@@ -144,7 +145,7 @@
             <h2>概要</h2>
             <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
             <h2>スクリーンショット</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット" style="max-width: 60%; height: auto;"> <!-- スクリーンショットを大きく -->
             <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
             </a>
@@ -153,9 +154,9 @@
         <div id="daily-photo" class="tab-content">
             <h1>Photograph</h1>
             <div class="photo-grid">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
@@ -171,9 +172,9 @@
             if (tabId && currentTab && currentTab.id === tabId) {
                 // 現在表示されているタブがクリックされた場合、隠す
                 currentTab.classList.remove('active');
-                document.getElementById('top-screen').style.display = 'block';
-                document.getElementById('tabs').style.display = 'flex';
-                document.getElementById('top-screen-buttons').style.display = 'flex';
+                document.querySelectorAll('.tabs button').forEach(button => {
+                    button.classList.remove('active');
+                });
             } else {
                 // タブコンテンツの表示/非表示
                 document.querySelectorAll('.tab-content').forEach(content => {
@@ -186,11 +187,6 @@
                 if (tabId) {
                     document.getElementById(tabId).classList.add('active');
                     document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
-                    document.getElementById('top-screen').style.display = 'none';
-                    document.getElementById('top-screen-buttons').style.display = 'none'; // ボタンを隠す
-                } else {
-                    document.getElementById('top-screen').style.display = 'block';
-                    document.getElementById('top-screen-buttons').style.display = 'flex'; // ボタンを再表示
                 }
             }
         }
