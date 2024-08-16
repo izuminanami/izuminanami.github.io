@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アプリ紹介</title>
+    <title>創作物紹介</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,7 +67,7 @@
         .tab-content img {
             margin: 10px 5px;
             display: inline-block;
-            max-width: 48%;
+            max-width: 45%; /* スクリーンショットを少し小さく */
             height: auto;
         }
         .photo-upload {
@@ -104,27 +104,28 @@
 <body>
     <div class="container">
         <div class="top-screen" id="top-screen">
+            <h1>プロフィール</h1>
             <div class="profile">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/Imymemine.png" alt="プロフィール画像">
                 <h2>Izumi Nanami</h2>
                 <p>天才大学生</p>
             </div>
-            <h1>アプリ紹介</h1>
+            <h1>創作物紹介</h1>
             <div class="top-screen-buttons" id="top-screen-buttons">
                 <button onclick="showTab('believe')">Believe.</button>
                 <button onclick="showTab('okashu')">おかしゅー道場</button>
-                <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
+                <button onclick="showTab('daily-photo')">Photograph</button>
             </div>
         </div>
 
         <div class="tabs" id="tabs" style="display: none;">
             <button onclick="showTab('believe')">Believe.</button>
             <button onclick="showTab('okashu')">おかしゅー道場</button>
-            <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
+            <button onclick="showTab('daily-photo')">Photograph</button>
         </div>
 
         <div id="believe" class="tab-content">
-            <button class="back-button" onclick="showTab(null)">トップに戻る</button>
+            <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Believe.</h1>
             <h2>概要</h2>
             <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
@@ -137,7 +138,7 @@
         </div>
 
         <div id="okashu" class="tab-content">
-            <button class="back-button" onclick="showTab(null)">トップに戻る</button>
+            <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>おかしゅー道場</h1>
             <h2>概要</h2>
             <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
@@ -149,13 +150,9 @@
         </div>
 
         <div id="daily-photo" class="tab-content">
-            <button class="back-button" onclick="showTab(null)">トップに戻る</button>
-            <h1>日常の写真アップロード</h1>
+            <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
+            <h1>Photograph</h1>
             <p>ここに日常の写真をアップロードできます。</p>
-            <div class="photo-upload">
-                <label for="daily-photo-upload">日常の写真をアップロード</label>
-                <input type="file" id="daily-photo-upload" accept="image/*">
-            </div>
         </div>
     </div>
 
