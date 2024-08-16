@@ -1,29 +1,67 @@
-<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アプリ紹介</title>
     <style>
-        .tab-content {
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .tab-content.active {
-            display: block;
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ccc;
         }
         .tabs button {
+            flex: 1;
             padding: 10px;
             cursor: pointer;
+            background-color: #f1f1f1;
+            border: none;
+            border-bottom: 2px solid transparent;
+            transition: background-color 0.3s, border-bottom 0.3s;
+        }
+        .tabs button.active {
+            background-color: #fff;
+            border-bottom: 2px solid #007BFF;
+        }
+        .tab-content {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s, max-height 0.3s;
+        }
+        .tab-content.active {
+            opacity: 1;
+            max-height: 1000px; /* 高さはコンテンツのサイズに合わせて調整 */
+        }
+        .tab-content img {
+            margin: 10px 0;
+            display: block;
+        }
+        .photo-upload {
+            margin-top: 20px;
+        }
+        .photo-upload input[type="file"] {
+            display: none;
+        }
+        .photo-upload label {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="tabs">
-        <button onclick="showTab('believe')">Believe.</button>
+        <button onclick="showTab('believe')" class="active">Believe.</button>
         <button onclick="showTab('okashu')">おかしゅー道場</button>
     </div>
 
-    <div id="believe" class="tab-content">
+    <div id="believe" class="tab-content active">
         <h1>Believe.</h1>
         <h2>概要</h2>
         <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
@@ -33,6 +71,10 @@
         <a href="https://apps.apple.com/jp/app/believe/id6480430036">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
         </a>
+        <div class="photo-upload">
+            <label for="believe-photo-upload">日常の写真をアップロード</label>
+            <input type="file" id="believe-photo-upload" accept="image/*">
+        </div>
     </div>
 
     <div id="okashu" class="tab-content">
@@ -44,6 +86,10 @@
         <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
             <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
         </a>
+        <div class="photo-upload">
+            <label for="okashu-photo-upload">日常の写真をアップロード</label>
+            <input type="file" id="okashu-photo-upload" accept="image/*">
+        </div>
     </div>
 
     <script>
@@ -51,10 +97,12 @@
             document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
             });
+            document.querySelectorAll('.tabs button').forEach(function(button) {
+                button.classList.remove('active');
+            });
             document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
         }
-        // デフォルトでBelieveタブを表示
-        showTab('believe');
     </script>
 </body>
 </html>
