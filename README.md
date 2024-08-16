@@ -38,7 +38,7 @@
             transition: background-color 0.3s, transform 0.2s;
         }
         .tabs button.active, .top-screen-buttons button.active {
-            background-color: #666;
+            background-color: #444; /* ボタンが一度クリックされた後も色が変わらないように */
         }
         .tabs button:hover, .top-screen-buttons button:hover, .back-button:hover {
             background-color: #555;
@@ -103,11 +103,20 @@
             margin: 10px 0;
             font-size: 1.2em;
             border-bottom: none; /* 下の線を無くす */
-            border-top: 2px solid #444; /* 上の線を短くする */
+            border-top: none; /* 上の線を無くす */
             display: inline-block;
             padding-bottom: 5px;
             padding-top: 5px;
             width: 100px; /* 線の幅を調整 */
+        }
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .photo-grid img {
+            max-width: 30%;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -162,12 +171,12 @@
         <div id="daily-photo" class="tab-content">
             <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Photograph</h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato" style="max-width: 30%;">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree" style="max-width: 30%;">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro" style="max-width: 30%;">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago" style="max-width: 30%;">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came" style="max-width: 30%;">
+            <div class="photo-grid">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
             </div>
         </div>
     </div>
@@ -179,8 +188,11 @@
             document.getElementById('tabs').style.display = tabId ? 'flex' : 'none';
             
             // コンテンツの表示
-            document.querySelectorAll('.tab-content').forEach(function(tab) {
-                tab.classList.remove('active');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tabs button').forEach(button => {
+                button.classList.remove('active');
             });
             if (tabId) {
                 document.getElementById(tabId).classList.add('active');
