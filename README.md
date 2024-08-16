@@ -99,6 +99,13 @@
             margin: 10px 0;
             font-size: 1.5em;
         }
+        .profile p {
+            margin: 10px 0;
+            font-size: 1.2em;
+            border-bottom: 2px solid #444; /* 線の色を指定 */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +159,12 @@
         <div id="daily-photo" class="tab-content">
             <button class="back-button" onclick="showTab(null)">プロフィールに戻る</button>
             <h1>Photograph</h1>
-            <p>ここに日常の写真をアップロードできます。</p>
+            <h2>日常の写真</h2>
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
         </div>
     </div>
 
