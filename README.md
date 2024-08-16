@@ -8,7 +8,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f2f2f2;
             color: #333;
         }
         .container {
@@ -16,28 +16,33 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
         .tabs, .top-screen-buttons {
             display: flex;
-            border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid #dcdcdc;
             margin-bottom: 20px;
         }
         .tabs button, .top-screen-buttons button, .back-button {
             flex: 1;
-            padding: 15px;
+            padding: 12px;
             cursor: pointer;
-            background-color: #007BFF;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             text-align: center;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .tabs button.active, .top-screen-buttons button.active {
             background-color: #0056b3;
+        }
+        .tabs button:hover, .top-screen-buttons button:hover, .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
         .back-button {
             background-color: #6c757d;
@@ -45,9 +50,6 @@
         }
         .back-button:hover {
             background-color: #5a6268;
-        }
-        .tabs button:hover, .top-screen-buttons button:hover, .back-button:hover {
-            background-color: #0056b3;
         }
         .tab-content {
             opacity: 0;
@@ -63,7 +65,7 @@
             display: none;
         }
         .tab-content img {
-            margin: 10px 0;
+            margin: 10px 5px;
             display: inline-block;
             max-width: 48%;
             height: auto;
@@ -75,8 +77,8 @@
             display: none;
         }
         .photo-upload label {
-            padding: 10px;
-            background-color: #007BFF;
+            padding: 12px;
+            background-color: #007bff;
             color: white;
             cursor: pointer;
             border-radius: 5px;
@@ -103,12 +105,12 @@
     <div class="container">
         <div class="top-screen" id="top-screen">
             <div class="profile">
-                <img src="https://via.placeholder.com/120" alt="プロフィール画像">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="プロフィール画像">
                 <h2>ユーザー名</h2>
                 <p>プロフィールの説明がここに入ります。簡単な自己紹介やスキルなどを記載できます。</p>
             </div>
             <h1>アプリ紹介</h1>
-            <div class="top-screen-buttons">
+            <div class="top-screen-buttons" id="top-screen-buttons">
                 <button onclick="showTab('believe')">Believe.</button>
                 <button onclick="showTab('okashu')">おかしゅー道場</button>
                 <button onclick="showTab('daily-photo')">日常の写真アップロード</button>
@@ -159,21 +161,26 @@
 
     <script>
         function showTab(tabId) {
-            // コンテンツを隠す
+            // トップ画面の表示/非表示
+            document.getElementById('top-screen').style.display = tabId ? 'none' : 'block';
+            document.getElementById('tabs').style.display = tabId ? 'flex' : 'none';
+            
+            // コンテンツの表示
             document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
                 tab.classList.add('hidden');
             });
-            // トップ画面を表示/隠す
+            document.querySelectorAll('.tabs button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+
             if (tabId) {
-                document.getElementById('top-screen').style.display = 'none';
-                document.getElementById('tabs').style.display = 'flex';
                 document.getElementById(tabId).classList.remove('hidden');
                 document.getElementById(tabId).classList.add('active');
                 document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
+                document.getElementById('top-screen-buttons').style.display = 'none'; // ボタンを隠す
             } else {
-                document.getElementById('top-screen').style.display = 'block';
-                document.getElementById('tabs').style.display = 'none';
+                document.getElementById('top-screen-buttons').style.display = 'flex'; // ボタンを再表示
             }
         }
         // デフォルトでトップ画面を表示
