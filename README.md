@@ -164,6 +164,7 @@
             <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
             </a>
+            </div>
         </div>
     </div>
 
