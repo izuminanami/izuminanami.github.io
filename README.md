@@ -159,8 +159,8 @@
             <h2>概要</h2>
             <p><strong>Believe.</strong> 真撮影を楽しむ音楽ライブでのエントリーシートの提出・管理を効率化するアプリです。出演者はスマホから簡単に提出でき、主催者はリアルタイムで内容を確認、タイムテーブルの作成、音響照明係への共有が可能です。</p>
             <h2>スクリーンショット</h2>
-            <img src="https://github.com/izuminanami/izuminanami.github.io/blob/292cb4b777b59fd0a0a44f16415532783d697709/4.png" alt="スクリーンショット1">
-            <img src="https://github.com/izuminanami/izuminanami.github.io/blob/292cb4b777b59fd0a0a44f16415532783d697709/5.png" alt="スクリーンショット2">  
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/4.png" alt="スクリーンショット1">
+            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/5.png" alt="スクリーンショット2">  
             <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
                 <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
             </a>
