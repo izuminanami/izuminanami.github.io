@@ -122,7 +122,7 @@
     <div class="container">
         <h1 class="profile-header">Profile</h1>
         <div class="profile">
-            <h1>Izumi Nanami</h1>
+            <h1>Nanami Izumi</h1>
         </div>
 
         <div class="tabs" id="tabs">
