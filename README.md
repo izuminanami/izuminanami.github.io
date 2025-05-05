@@ -122,13 +122,13 @@
     <div class="container">
         <h1 class="profile-header">Profile</h1>
         <div class="profile">
-            <h2>Izumi Nanami</h2>
+            <h1>Izumi Nanami</h1>
         </div>
 
         <div class="tabs" id="tabs">
             <button onclick="showTab('believe')">Believe.</button>
             <button onclick="showTab('okashu')">おかしゅー道場</button>
-            <button onclick="showTab('daily-photo')">Photograph</button>
+            <button onclick="showTab('eshub')">ESHub</button>
         </div>
 
         <div id="believe" class="tab-content">
@@ -154,16 +154,16 @@
             </a>
         </div>
 
-        <div id="daily-photo" class="tab-content">
-            <h1>Photograph</h1>
-            <div class="photo-grid">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/tree.jpg" alt="tree">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hato.jpg" alt="hato">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/hashi.jpg" alt="hashi">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/came.jpg" alt="came">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/toumoro.jpg" alt="toumoro">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/kago.jpg" alt="kago">
-            </div>
+        <div id="eshub" class="tab-content">
+            <h1>ESHub</h1>
+            <h2>概要</h2>
+            <p><strong>Believe.</strong> 真撮影を楽しむ音楽ライブでのエントリーシートの提出・管理を効率化するアプリです。出演者はスマホから簡単に提出でき、主催者はリアルタイムで内容を確認、タイムテーブルの作成、音響照明係への共有が可能です。</p>
+            <h2>スクリーンショット</h2>
+            <img src="https://github.com/user-attachments/assets/a024bc64-2f64-4161-bd2e-91ee197a055e" alt="スクリーンショット1">
+            <img src="https://github.com/user-attachments/assets/3431679a-42f4-45ae-bb31-396d0f0c4a8a" alt="スクリーンショット2">  
+            <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
+                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
+            </a>
         </div>
     </div>
 
