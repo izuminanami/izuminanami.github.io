@@ -122,9 +122,7 @@
     <div class="container">
         <h1 class="profile-header">Profile</h1>
         <div class="profile">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/Imymemine.png" alt="プロフィール画像">
             <h2>Izumi Nanami</h2>
-            <h3>東京理科大学 理学部 数学科</h3>
         </div>
 
         <div class="tabs" id="tabs">
