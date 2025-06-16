@@ -168,14 +168,15 @@
   <div class="container">
     <div class="profile-header">Profile</div>
     <div class="profile">
-      <h1>Nanami Izumi</h1>
- 　　　　<p>Languages: Swift, SAS, Python</p>
-       <p>4000+ app installs | 50th in App Store (Music)</p>
-       <p><strong>Location history:</strong><br>
-       2003–2007: Machida, Tokyo<br>
-       2007–2022: Chiba, Chiba<br>
-       2022–now: Sumida, Tokyo</p>
-    </div>
+  <h1>Nanami Izumi</h1>
+  <p><strong>Languages:</strong> Swift, SAS, Python</p>
+  <p><strong>Achievements:</strong> 4000+ app installs / Ranked 50th in App Store (Music)</p>
+  <p><strong>Location history:</strong><br>
+    2003–2007: Machida, Tokyo<br>
+    2007–2022: Chiba, Chiba<br>
+    2022–now: Sumida, Tokyo
+  </p>
+</div>
 
     <div class="tabs">
       <button onclick="showTab('believe')">Believe.</button>
