@@ -1,7 +1,7 @@
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>創作物紹介</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -39,20 +39,10 @@
       margin-bottom: 10px;
     }
 
-    .parallax-section {
-      height: 300px;
-      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      position: relative;
-      z-index: 0;
-    }
-
     .tabs {
       display: flex;
       gap: 10px;
-      margin: 30px 0 20px;
+      margin-bottom: 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -129,17 +119,12 @@
       <h1>Nanami Izumi</h1>
     </div>
 
-    <!-- パララックス背景 -->
-    <div class="parallax-section" id="parallax"></div>
-
-    <!-- タブ -->
     <div class="tabs">
       <button onclick="showTab('believe')">Believe.</button>
       <button onclick="showTab('okashu')">おかしゅー道場</button>
       <button onclick="showTab('eshub')">ESHub</button>
     </div>
 
-    <!-- Believe. セクション -->
     <div id="believe" class="tab-content">
       <h1>Believe.</h1>
       <h2>概要</h2>
@@ -152,7 +137,6 @@
       </a>
     </div>
 
-    <!-- おかしゅー道場 セクション -->
     <div id="okashu" class="tab-content">
       <h1>おかしゅー道場</h1>
       <h2>概要</h2>
@@ -164,7 +148,6 @@
       </a>
     </div>
 
-    <!-- ESHub セクション -->
     <div id="eshub" class="tab-content">
       <h1>ESHub</h1>
       <h2>概要</h2>
@@ -187,15 +170,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab(null);
-
-    window.addEventListener('scroll', function () {
-      const scrollY = window.scrollY;
-      const parallax = document.getElementById('parallax');
-      if (parallax) {
-        parallax.style.backgroundPositionY = `${scrollY * 0.4}px`;
-      }
-    });
+    showTab(null); // 最初は非表示
   </script>
 </body>
 </html>
