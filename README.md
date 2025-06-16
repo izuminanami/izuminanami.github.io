@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -195,15 +194,18 @@
   <h1>Nanami Izumi</h1>
   <table class="profile-table">
     <tr>
-      <td class="label">Languages:</td>
+      <td class="label">Languages</td>
       <td>Swift, SAS, Python</td>
     </tr>
     <tr>
-      <td class="label">Achievements:</td>
-      <td>4000+ app installs / Ranked 50th in App Store (Music)</td>
+      <td class="label">Achievements</td>
+      <td>
+        3000+ total downloads<br>
+        Ranked 50th in App Store (Music)
+      </td>
     </tr>
     <tr>
-      <td class="label" style="vertical-align: top;">Location history:</td>
+      <td class="label" style="vertical-align: top;">Location history</td>
       <td>
         2003–2007: Machida, Tokyo<br>
         2007–2022: Chiba, Chiba<br>
