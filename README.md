@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -43,24 +44,30 @@
     .profile h1 {
       font-size: 2em;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .profile-table {
       margin: 0 auto;
       border-collapse: separate;
       border-spacing: 0 8px;
-      color: #cccccc;
-      font-size: 1em;
-      text-align: left;
-      background-color: transparent;
+      background-color: #1f1f1f;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .profile-table td {
+      padding: 8px 14px;
+      color: #f0f0f0;
+      background-color: #2a2a2a;
+      border-radius: 6px;
     }
 
     .profile-table .label {
       font-weight: bold;
-      color: #f0f0f0;
+      color: #ffffff;
       white-space: nowrap;
-      padding-right: 12px;
     }
 
     .tabs {
@@ -257,7 +264,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab('null'); // 初期表示
+    showTab('believe'); // 初期表示をBelieve.に
   </script>
 </body>
 </html>
