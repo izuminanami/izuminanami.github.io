@@ -45,18 +45,8 @@
   margin-bottom: 10px;
 }
 
-.profile-img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 15px auto;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* 中央揃え */
 .profile-table {
+  text-align: center;
   margin: 0 auto;
   display: table;
   border-collapse: separate;
