@@ -34,42 +34,42 @@
       margin-bottom: 10px;
       color: #cccccc;
     }
+    
+    .profile {
+    text-align: center;
+    margin-bottom: 30px;
+    }
 
-.profile {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .profile h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    }
 
-.profile h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
+    .profile-table {
+    margin: 0 auto;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    }
 
-.profile-table {
-  margin: 0 auto;
-  display: table;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  background-color: #1f1f1f;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: left;
-}
+    .profile-table td {
+    padding: 10px 16px;
+    color: #f0f0f0;
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    }
 
-.profile-table td {
-  padding: 10px 16px;
-  color: #f0f0f0;
-  background-color: #2a2a2a;
-  border-radius: 6px;
-}
-
-.profile-table .label {
-  font-weight: bold;
-  color: #ffffff;
-  white-space: nowrap;
-  text-align: left;
-  min-width: 130px;
-}
+    .profile-table .label {
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+    text-align: left;
+    min-width: 130px;
+    }
 
     .tabs {
       display: flex;
