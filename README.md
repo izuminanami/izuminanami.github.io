@@ -53,6 +53,7 @@
       color: #cccccc;
       font-size: 1em;
       text-align: left;
+      background-color: transparent;
     }
 
     .profile-table .label {
