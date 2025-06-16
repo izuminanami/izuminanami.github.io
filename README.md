@@ -67,7 +67,7 @@
   font-weight: bold;
   color: #ffffff;
   white-space: nowrap;
-  text-align: right;
+  text-align: left;
   min-width: 130px;
 }
 
