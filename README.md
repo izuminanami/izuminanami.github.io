@@ -175,8 +175,6 @@
        2003–2007: Machida, Tokyo<br>
        2007–2022: Chiba, Chiba<br>
        2022–now: Sumida, Tokyo</p>
-      
-      <p> Machida,Tokyo → Chiba,Chiba → Sumida,Tokyo</p>
     </div>
 
     <div class="tabs">
