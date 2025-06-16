@@ -192,6 +192,7 @@
     <div class="profile-header">Profile</div>
 <div class="profile">
   <h1>Nanami Izumi</h1>
+  <img class="screenshot" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/6.png" alt="スクリーンショット6">
   <table class="profile-table">
     <tr>
       <td class="label">Languages</td>
