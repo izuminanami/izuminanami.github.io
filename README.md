@@ -14,21 +14,6 @@
       font-size: 16px;
     }
 
-    .profile-table {
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 0 8px
-    color: #cccccc;
-    font-size: 1em;
-    }
-    
-    .profile-table .label {
-    font-weight: bold;
-    color: #f0f0f0;
-    white-space: nowrap;
-    padding-right: 12px;
-    }
-    
     .container {
       width: 90%;
       max-width: 1000px;
@@ -59,6 +44,22 @@
       font-size: 2em;
       font-weight: 600;
       margin-bottom: 10px;
+    }
+
+    .profile-table {
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      color: #cccccc;
+      font-size: 1em;
+      text-align: left;
+    }
+
+    .profile-table .label {
+      font-weight: bold;
+      color: #f0f0f0;
+      white-space: nowrap;
+      padding-right: 12px;
     }
 
     .tabs {
@@ -130,18 +131,18 @@
       display: inline-block;
     }
 
+    .appstore-badge {
+      display: block;
+      margin: 20px auto;
+      width: 120px;
+    }
+
     a img {
       transition: transform 0.3s ease;
     }
 
     a img:hover {
       transform: scale(1.05);
-    }
-
-    .appstore-badge {
-      display: block;
-      margin: 20px auto;
-      width: 120px;
     }
 
     @media (max-width: 600px) {
@@ -182,27 +183,27 @@
 <body>
   <div class="container">
     <div class="profile-header">Profile</div>
-<div class="profile">
-  <h1>Nanami Izumi</h1>
-  <table class="profile-table">
-    <tr>
-      <td class="label">Languages:</td>
-      <td>Swift, SAS, Python</td>
-    </tr>
-    <tr>
-      <td class="label">Achievements:</td>
-      <td>4000+ app installs / Ranked 50th in App Store (Music)</td>
-    </tr>
-    <tr>
-      <td class="label" style="vertical-align: top;">Location history:</td>
-      <td>
-        2003–2007: Machida, Tokyo<br>
-        2007–2022: Chiba, Chiba<br>
-        2022–now: Sumida, Tokyo
-      </td>
-    </tr>
-  </table>
-</div>
+    <div class="profile">
+      <h1>Nanami Izumi</h1>
+      <table class="profile-table">
+        <tr>
+          <td class="label">Languages:</td>
+          <td>Swift, SAS, Python</td>
+        </tr>
+        <tr>
+          <td class="label">Achievements:</td>
+          <td>4000+ app installs / Ranked 50th in App Store (Music)</td>
+        </tr>
+        <tr>
+          <td class="label" style="vertical-align: top;">Location history:</td>
+          <td>
+            2003–2007: Machida, Tokyo<br>
+            2007–2022: Chiba, Chiba<br>
+            2022–now: Sumida, Tokyo
+          </td>
+        </tr>
+      </table>
+    </div>
 
     <div class="tabs">
       <button onclick="showTab('believe')">Believe.</button>
@@ -255,7 +256,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab('null'); // 初期画面
+    showTab('null'); // 初期表示
   </script>
 </body>
 </html>
