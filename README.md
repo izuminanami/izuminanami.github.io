@@ -212,7 +212,7 @@
       <td>
         2003–2007: Machida, Tokyo<br>
         2007–2022: Chiba, Chiba<br>
-        2022–now : Sumida, Tokyo
+        2022– now : Sumida, Tokyo
       </td>
     </tr>
   </table>
