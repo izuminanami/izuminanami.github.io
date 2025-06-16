@@ -169,6 +169,13 @@
     <div class="profile-header">Profile</div>
     <div class="profile">
       <h1>Nanami Izumi</h1>
+ 　　　　<p>Languages: Swift, SAS, Python</p>
+       <p>4000+ app installs | 50th in App Store (Music)</p>
+       <p><strong>Location history:</strong><br>
+       2003–2007: Machida, Tokyo<br>
+       2007–2022: Chiba, Chiba<br>
+       2022–now: Sumida, Tokyo</p>
+      
       <p> Machida,Tokyo → Chiba,Chiba → Sumida,Tokyo</p>
     </div>
 
