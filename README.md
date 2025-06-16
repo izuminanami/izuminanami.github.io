@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>創作物紹介</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -11,28 +12,35 @@
       background-color: #121212;
       color: #f0f0f0;
       line-height: 1.6;
+      font-size: 16px;
     }
+
     .container {
+      width: 90%;
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 20px auto;
       padding: 20px;
       background: #1f1f1f;
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
+
     h1, h2 {
       color: #ffffff;
     }
+
     .profile-header {
       font-size: 1.8em;
       font-weight: bold;
       margin-bottom: 10px;
       color: #cccccc;
     }
+
     .profile {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .profile h1 {
       font-size: 2em;
       font-weight: 600;
@@ -42,10 +50,11 @@
     .tabs {
       display: flex;
       gap: 10px;
-      margin-bottom: 20px;
+      margin: 30px 0 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     .tabs button {
       flex: 1;
       min-width: 120px;
@@ -58,10 +67,12 @@
       font-size: 1em;
       transition: 0.2s ease;
     }
+
     .tabs button:hover {
       background: #3a3a3a;
       transform: translateY(-2px);
     }
+
     .tabs button.active {
       background: #555;
     }
@@ -70,6 +81,7 @@
       display: none;
       animation: fadeIn 0.4s ease;
     }
+
     .tab-content.active {
       display: block;
     }
@@ -86,8 +98,10 @@
     }
 
     .tab-content img {
-      max-width: 30%;
-      margin: 10px;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
@@ -105,9 +119,27 @@
       margin: 20px auto;
     }
 
+    /* ★ レスポンシブ対応 */
     @media (max-width: 600px) {
-      .tab-content img {
-        max-width: 90%;
+      body {
+        font-size: 14px;
+      }
+
+      .tabs {
+        flex-direction: column;
+      }
+
+      .tabs button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .profile h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -119,12 +151,14 @@
       <h1>Nanami Izumi</h1>
     </div>
 
+    <!-- タブ -->
     <div class="tabs">
       <button onclick="showTab('believe')">Believe.</button>
       <button onclick="showTab('okashu')">おかしゅー道場</button>
       <button onclick="showTab('eshub')">ESHub</button>
     </div>
 
+    <!-- Believe. セクション -->
     <div id="believe" class="tab-content">
       <h1>Believe.</h1>
       <h2>概要</h2>
@@ -137,6 +171,7 @@
       </a>
     </div>
 
+    <!-- おかしゅー道場 セクション -->
     <div id="okashu" class="tab-content">
       <h1>おかしゅー道場</h1>
       <h2>概要</h2>
@@ -148,6 +183,7 @@
       </a>
     </div>
 
+    <!-- ESHub セクション -->
     <div id="eshub" class="tab-content">
       <h1>ESHub</h1>
       <h2>概要</h2>
@@ -170,7 +206,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab(null); // 最初は非表示
+    showTab('believe'); // 最初に Believe. を表示
   </script>
 </body>
 </html>
