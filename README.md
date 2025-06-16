@@ -169,6 +169,7 @@
     <div class="profile-header">Profile</div>
     <div class="profile">
       <h1>Nanami Izumi</h1>
+      <p><strong>Location history:</strong> Machida, Tokyo → Chiba, Chiba → Sumida, Tokyo</p>
     </div>
 
     <div class="tabs">
