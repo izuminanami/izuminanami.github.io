@@ -14,6 +14,21 @@
       font-size: 16px;
     }
 
+    .profile-table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 8px
+    color: #cccccc;
+    font-size: 1em;
+    }
+    
+    .profile-table .label {
+    font-weight: bold;
+    color: #f0f0f0;
+    white-space: nowrap;
+    padding-right: 12px;
+    }
+    
     .container {
       width: 90%;
       max-width: 1000px;
