@@ -266,7 +266,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab('believe'); // 初期表示をBelieve.に
+    showTab('null'); // 初期表示
   </script>
 </body>
 </html>
