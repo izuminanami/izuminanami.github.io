@@ -47,9 +47,9 @@
     }
 
 .profile-table {
+  display: table;
   margin-left: auto;
   margin-right: auto;
-  display: table;
   border-collapse: separate;
   border-spacing: 0 10px;
   background-color: #1f1f1f;
