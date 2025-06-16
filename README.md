@@ -35,21 +35,30 @@
       color: #cccccc;
     }
 
-    .profile {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .profile h1 {
-      font-size: 2em;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+.profile h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
 
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* 中央揃え */
 .profile-table {
+  margin: 0 auto;
   display: table;
-  margin-left: auto;
-  margin-right: auto;
   border-collapse: separate;
   border-spacing: 0 10px;
   background-color: #1f1f1f;
