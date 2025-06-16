@@ -97,12 +97,13 @@
     }
 
     .tab-content img {
-      width: 100%;
-      max-width: 100%;
+      width: 30%;
+      max-width: 30%;
       height: auto;
-      margin-bottom: 10px;
+      margin: 10px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      display: inline-block;
     }
 
     a img {
@@ -116,9 +117,9 @@
     .appstore-badge {
       display: block;
       margin: 20px auto;
+      width: 120px;
     }
 
-    /* ★ レスポンシブ対応 */
     @media (max-width: 600px) {
       body {
         font-size: 14px;
@@ -140,6 +141,16 @@
       h2 {
         font-size: 1.2em;
       }
+
+      .tab-content img {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+      }
+
+      .appstore-badge {
+        width: 100px;
+      }
     }
   </style>
 </head>
@@ -150,26 +161,24 @@
       <h1>Nanami Izumi</h1>
     </div>
 
-    <!-- タブ -->
     <div class="tabs">
       <button onclick="showTab('believe')">Believe.</button>
       <button onclick="showTab('okashu')">おかしゅー道場</button>
       <button onclick="showTab('eshub')">ESHub</button>
     </div>
 
-    <!-- Believe. セクション -->
     <div id="believe" class="tab-content">
       <h1>Believe.</h1>
       <h2>概要</h2>
       <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
       <h2>スクリーンショット</h2>
       <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/1.png" alt="スクリーンショット1">
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/2.png" alt="スクリーンショット2">
       <a href="https://apps.apple.com/jp/app/believe/id6480430036">
-        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="50">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store">
       </a>
     </div>
 
-    <!-- おかしゅー道場 セクション -->
     <div id="okashu" class="tab-content">
       <h1>おかしゅー道場</h1>
       <h2>概要</h2>
@@ -177,11 +186,10 @@
       <h2>スクリーンショット</h2>
       <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット">
       <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
-        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store">
       </a>
     </div>
 
-    <!-- ESHub セクション -->
     <div id="eshub" class="tab-content">
       <h1>ESHub</h1>
       <h2>概要</h2>
@@ -190,7 +198,7 @@
       <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/4.png" alt="スクリーンショット1">
       <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/5.png" alt="スクリーンショット2">
       <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
-        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store">
       </a>
     </div>
   </div>
@@ -204,7 +212,7 @@
         document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
       }
     }
-    showTab('null');
+    showTab('believe'); // 初期表示
   </script>
 </body>
 </html>
