@@ -1,197 +1,177 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>創作物紹介</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background: #2c2c2c;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
-        .tabs, .top-screen-buttons {
-            display: flex;
-            border-bottom: 2px solid #3a3a3a;
-            margin-bottom: 20px;
-        }
-        .tabs button, .top-screen-buttons button {
-            flex: 1;
-            padding: 12px;
-            cursor: pointer;
-            background-color: #444;
-            color: #e0e0e0;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .tabs button.active, .top-screen-buttons button.active {
-            background-color: #555;
-        }
-        .tabs button:hover, .top-screen-buttons button:hover {
-            background-color: #555;
-            transform: translateY(-2px);
-        }
-        .tab-content {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.3s, max-height 0.3s;
-        }
-        .tab-content.active {
-            opacity: 1;
-            max-height: 1000px;
-        }
-        .tab-content.hidden {
-            display: none;
-        }
-        .tab-content img {
-            margin: 10px 5px;
-            display: inline-block;
-            max-width: 30%;
-            height: auto;
-        }
-        .photo-upload {
-            margin-top: 20px;
-        }
-        .photo-upload input[type="file"] {
-            display: none;
-        }
-        .photo-upload label {
-            padding: 12px;
-            background-color: #444;
-            color: #e0e0e0;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block;
-            text-align: center;
-        }
-        .profile {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .profile img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-        }
-        .profile h2 {
-            margin: 10px 0;
-            font-size: 1.5em;
-        }
-        .profile p {
-            margin: 10px 0;
-            font-size: 1.2em;
-            border-top: none;
-            border-bottom: none;
-            display: inline-block;
-            padding-bottom: 5px;
-            padding-top: 5px;
-            width: 100px;
-        }
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .photo-grid img {
-            max-width: 30%;
-            margin-bottom: 10px;
-        }
-        .profile-header {
-            text-align: left; /* 左寄せに変更 */
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>創作物紹介</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1f1f1f;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+    h1, h2 {
+      color: #ffffff;
+    }
+    .profile-header {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #cccccc;
+    }
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profile h1 {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tabs button {
+      flex: 1;
+      min-width: 120px;
+      background: #2a2a2a;
+      color: #f0f0f0;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: 0.2s ease;
+    }
+    .tabs button:hover {
+      background: #3a3a3a;
+      transform: translateY(-2px);
+    }
+    .tabs button.active {
+      background: #555;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab-content img {
+      max-width: 30%;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    a img {
+      transition: transform 0.3s ease;
+    }
+
+    a img:hover {
+      transform: scale(1.05);
+    }
+
+    .appstore-badge {
+      display: block;
+      margin: 20px auto;
+    }
+
+    @media (max-width: 600px) {
+      .tab-content img {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="profile-header">Profile</h1>
-        <div class="profile">
-            <h1>Nanami Izumi</h1>
-        </div>
-
-        <div class="tabs" id="tabs">
-            <button onclick="showTab('believe')">Believe.</button>
-            <button onclick="showTab('okashu')">おかしゅー道場</button>
-            <button onclick="showTab('eshub')">ESHub</button>
-        </div>
-
-        <div id="believe" class="tab-content">
-            <h1>Believe.</h1>
-            <h2>概要</h2>
-            <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
-            <h2>スクリーンショット</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/1.png" alt="スクリーンショット1">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/2.png" alt="スクリーンショット2">
-            <a href="https://apps.apple.com/jp/app/believe/id6480430036">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
-            </a>
-        </div>
-
-        <div id="okashu" class="tab-content">
-            <h1>おかしゅー道場</h1>
-            <h2>概要</h2>
-            <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
-            <h2>スクリーンショット</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット" style="max-width: 60%; height: auto;">
-            <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
-            </a>
-        </div>
-
-        <div id="eshub" class="tab-content">
-            <h1>ESHub</h1>
-            <h2>概要</h2>
-            <p><strong>Believe.</strong> 真撮影を楽しむ音楽ライブでのエントリーシートの提出・管理を効率化するアプリです。出演者はスマホから簡単に提出でき、主催者はリアルタイムで内容を確認、タイムテーブルの作成、音響照明係への共有が可能です。</p>
-            <h2>スクリーンショット</h2>
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/4.png" alt="スクリーンショット1">
-            <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/5.png" alt="スクリーンショット2">  
-            <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
-                <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150" style="display: block; margin: 20px auto;">
-            </a>
-        </div>
+  <div class="container">
+    <div class="profile-header">Profile</div>
+    <div class="profile">
+      <h1>Nanami Izumi</h1>
     </div>
 
-    <script>
-        function showTab(tabId) {
-            const currentTab = document.querySelector('.tab-content.active');
+    <div class="tabs">
+      <button onclick="showTab('believe')">Believe.</button>
+      <button onclick="showTab('okashu')">おかしゅー道場</button>
+      <button onclick="showTab('eshub')">ESHub</button>
+    </div>
 
-            // トップ画面の表示/非表示
-            if (tabId && currentTab && currentTab.id === tabId) {
-                currentTab.classList.remove('active');
-                document.querySelectorAll('.tabs button').forEach(button => {
-                    button.classList.remove('active');
-                });
-            } else {
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.querySelectorAll('.tabs button').forEach(button => {
-                    button.classList.remove('active');
-                });
+    <div id="believe" class="tab-content">
+      <h1>Believe.</h1>
+      <h2>概要</h2>
+      <p><strong>Believe.</strong> はユニークな写真が撮影できるカメラアプリです。クリエイティブな写真撮影を楽しむための機能を搭載しています。</p>
+      <h2>スクリーンショット</h2>
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/1.png" alt="スクリーンショット1">
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/2.png" alt="スクリーンショット2">
+      <a href="https://apps.apple.com/jp/app/believe/id6480430036">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
+      </a>
+    </div>
 
-                if (tabId) {
-                    document.getElementById(tabId).classList.add('active');
-                    document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
-                }
-            }
-        }
-        showTab(null);
-    </script>
+    <div id="okashu" class="tab-content">
+      <h1>おかしゅー道場</h1>
+      <h2>概要</h2>
+      <p><strong>おかしゅー道場</strong> はドラムの演奏を学ぶためのアプリです。初心者から上級者まで楽しめる様々なコンテンツを提供します。</p>
+      <h2>スクリーンショット</h2>
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/3.png" alt="スクリーンショット">
+      <a href="https://apps.apple.com/jp/app/%E3%81%8A%E3%81%8B%E3%81%97%E3%82%85%E3%83%BC%E9%81%93%E5%A0%B4/id6504088528">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
+      </a>
+    </div>
+
+    <div id="eshub" class="tab-content">
+      <h1>ESHub</h1>
+      <h2>概要</h2>
+      <p><strong>ESHub</strong> は音楽ライブでのエントリーシートの提出・管理を効率化するアプリです。出演者はスマホから簡単に提出でき、主催者はリアルタイムで内容を確認、タイムテーブルの作成、音響照明係への共有が可能です。</p>
+      <h2>スクリーンショット</h2>
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/4.png" alt="スクリーンショット1">
+      <img src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/5.png" alt="スクリーンショット2">
+      <a href="https://apps.apple.com/jp/app/eshub/id6745217075">
+        <img class="appstore-badge" src="https://raw.githubusercontent.com/izuminanami/izuminanami.github.io/main/AppStore.png" alt="App Store" width="150">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+      if (tabId) {
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`).classList.add('active');
+      }
+    }
+    showTab(null); // 最初は非表示
+  </script>
 </body>
 </html>
