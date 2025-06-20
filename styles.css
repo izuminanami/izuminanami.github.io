@@ -173,8 +173,22 @@ section {
   background-color: #444c56;
 }
 
+.photo-button {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-
+.photo-button:hover {
+  background-color: #666;
+  transform: translateY(-2px);
+}
 
 .photo-grid {
   display: flex;
