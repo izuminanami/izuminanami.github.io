@@ -217,6 +217,11 @@ section {
   flex-wrap: wrap;
 }
 
+.profile-img {
+  width: 150px;
+  border-radius: 8px;
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;
