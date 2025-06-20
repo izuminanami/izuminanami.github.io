@@ -234,6 +234,5 @@ section {
   max-width: 160px;
   object-fit: contain;
   border-radius: 8px;
-  background-color: white; /* 透過画像の背景調整用（任意） */
   padding: 4px; /* 任意：余白を追加して整える */
 }
