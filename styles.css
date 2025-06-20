@@ -209,3 +209,28 @@ section {
 .photo-grid img:hover {
   transform: scale(1.03);
 }
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 8px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badges img {
+  height: 80px;
+  max-width: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+}
