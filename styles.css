@@ -221,18 +221,3 @@ section {
   width: 150px;
   border-radius: 8px;
 }
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-
-.badges img {
-  height: 80px;
-  max-width: 160px;
-  object-fit: contain;
-  border-radius: 8px;
-  padding: 4px; /* 任意：余白を追加して整える */
-}
