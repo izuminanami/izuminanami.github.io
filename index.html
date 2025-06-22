@@ -1,10 +1,12 @@
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nanami Izumi Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
     <nav>
@@ -17,11 +19,17 @@
     </nav>
   </header>
 
+  <!-- ローディング画面 -->
+  <div id="loader">
+    <p class="loader-name">Nanami Izumi</p>
+    <p class="loader-subtitle">Portfolio Site</p>
+  </div>
+
   <section id="profile">
     <h2>Profile</h2>
-      <div class="profile-container">
-    <img src="images/profile.png" alt="Profile Photo" class="profile-img">
-  </div>
+    <div class="profile-container">
+      <img src="images/profile.png" alt="Profile Photo" class="profile-img">
+    </div>
     <p><strong>Nanami Izumi</strong></p>
     <p>大学生 / iOSアプリデベロッパー / データ分析屋 / ガジェットオタク / フォトグラファー</p>
     <p>累計ダウンロード数3300件以上 / AppStore音楽カテゴリ50位達成</p>
@@ -30,24 +38,27 @@
 
   <section id="works">
     <h2>Works</h2>
-  <div class="works-grid">
-    <div class="work-item" onclick="openModal('modal-believe')">
-      <img src="images/believe-icon.png" alt="Believe App Icon" class="app-icon">
+    <div class="works-grid">
+      <div class="work-item" onclick="openModal('modal-believe')">
+        <img src="images/believe-icon.png" alt="Believe App Icon" class="app-icon">
+      </div>
+      <div class="work-item" onclick="openModal('modal-oksh')">
+        <img src="images/oksh-icon.png" alt="おかしゅー道場 App Icon" class="app-icon">
+      </div>
+      <div class="work-item" onclick="openModal('modal-es')">
+        <img src="images/ESHub-icon.png" alt="ESHub App Icon" class="app-icon">
+      </div>
+      <div class="work-item" onclick="openModal('modal-sas')">
+        <img src="images/pdf-icon.png" alt="PDF Icon" class="app-icon">
+      </div>
     </div>
-    <div class="work-item" onclick="openModal('modal-oksh')">
-      <img src="images/oksh-icon.png" alt="おかしゅー道場 App Icon" class="app-icon">
-    </div>
-    <div class="work-item" onclick="openModal('modal-es')">
-      <img src="images/ESHub-icon.png" alt="ESHub App Icon" class="app-icon">
-    </div>
-     <div class="work-item" onclick="openModal('modal-sas')">
-      <img src="images/pdf-icon.png" alt="PDF Icon" class="app-icon">
-    </div>
-  </div>
     <section id="photos">
-  <h2>Photos</h2>
-  <a href="photos.html" class="photo-button">📷 View My Photos</a>
-</section>
+      <h2>Photos</h2>
+      <a href="photos.html" class="github-button">
+        <img src="https://cdn.jsdelivr.net/gh/iconic/open-iconic/svg/image.svg" alt="Photo Icon" class="github-icon">
+        View My Photos
+      </a>
+    </section>
 
     <!-- モーダル: Believe. -->
     <div id="modal-believe" class="modal">
@@ -59,7 +70,7 @@
         <p>集合写真や風景写真の撮影時に、記録のあり方を広げることを目的として開発しました。</p>
         <p>シャッターボタンの挙動や撮影の流れにこだわるため、AVFoundationを採用しています。</p>
         <p><strong>使用技術：</strong>Swift(SwiftUI,AVFoundation), GoogleAdMob</p>
-        <img src="images/believe-screenshot.png" alt="Believe screenshot" style="width:100%; max-width:300px;" />
+        <!-- <img src="images/believe-screenshot.png" alt="Believe screenshot" style="width:100%; max-width:300px;" /> -->
         <a href="https://apps.apple.com/app/id6480430036" target="_blank" rel="noopener noreferrer">
           <img src="images/appstore-badge.png" alt="Download on the App Store" class="store-button" />
         </a>
@@ -69,14 +80,14 @@
     <!-- モーダル: おかしゅー道場 -->
     <div id="modal-oksh" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-okashu')">&times;</span>
+        <span class="close" onclick="closeModal('modal-oksh')">&times;</span>
         <h2>おかしゅー道場</h2>
         <p>2024/6/8 配信開始</p>
         <p>初心者から上級者まで楽しめる、あらゆるレベルに対応したドラム演奏アプリです。</p>
         <p>インフルエンサーのファンに向けて、打楽器の楽しさや魅力を伝えることを目的に開発しました。</p>
         <p>ビジュアルはBlenderで制作し、Firebaseによるタップ数ランキング機能を導入することで、継続的なユーザーの獲得を図りました。</p>
         <p><strong>使用技術：</strong>Swift(SwiftUI,AVFoundation,SwiftGif,WidgetKit), Blender, Firebase, GoogleAdMob</p>
-        <img src="images/oksh-screenshot.png" alt="おかしゅー道場 screenshot" style="width:100%; max-width:300px;" />
+        <!-- <img src="images/oksh-screenshot.png" alt="おかしゅー道場 screenshot" style="width:100%; max-width:300px;" /> -->
         <a href="https://apps.apple.com/app/id6504088528" target="_blank" rel="noopener noreferrer">
           <img src="images/appstore-badge.png" alt="Download on the App Store" class="store-button" />
         </a>
@@ -92,42 +103,58 @@
         <p>音楽イベントのエントリーシート提出・管理を効率化するアプリです。</p>
         <p>これまでExcelで行っていたエントリーシートの提出・管理をアプリ化することで、運営の負担軽減を目的に開発しました。</p>
         <p>GoogleAppsScriptを用いてデータを管理し、タイムテーブルもワンタップで自動作成できるように設計しています。</p>
-        <p><strong>使用技術：</strong>Swift(SwiftUI,StoreKit,Network,Alamofire,SwiftyJSON), GoogleAppsScript, GoogleAdMob, Git</p>
-        <img src="images/eshub-screenshot.png" alt="ESHub screenshot" style="width:100%; max-width:300px;" />
-        <a href="https://apps.apple.com/app/id6745217075" target="_blank" rel="noopener noreferrer">
-          <img src="images/appstore-badge.png" alt="Download on the App Store" class="store-button" />
-        </a>
-        <a href="https://github.com/izuminanami/ESHub" target="_blank" rel="noopener noreferrer" class="github-button">
-          GitHub
-        </a>
+        <p><strong>使用技術：</strong>Swift(SwiftUI,StoreKit,Network,Alamofire,SwiftyJSON), GoogleAppsScript, GoogleAdMob,
+          Git</p>
+        <!-- <img src="images/eshub-screenshot.png" alt="ESHub screenshot" style="width:100%; max-width:300px;" /> -->
+        <div class="store-links">
+          <a href="https://apps.apple.com/app/id6745217075" target="_blank" rel="noopener noreferrer">
+            <img src="images/appstore-badge.png" alt="Download on the App Store" class="store-button" />
+          </a>
+          <a href="https://github.com/izuminanami/ESHub" target="_blank" rel="noopener noreferrer"
+            class="github-button">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+              class="github-icon">
+            GitHub
+          </a>
+        </div>
       </div>
     </div>
 
-        <!-- モーダル: SAS -->
+    <!-- モーダル: SAS -->
     <div id="modal-sas" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-es')">&times;</span>
+        <span class="close" onclick="closeModal('modal-sas')">&times;</span>
         <h2>タイタニック号生存に関する解析</h2>
         <p>2025/1/29 完成</p>
         <p>SASを用いて、タイタニック号の生存率に関する統計的分析を行いました。</p>
         <p>人口統計学的および社会経済的要因が、タイタニック号における生存率にどのような影響を与えたかを明らかにすることを目的としました。</p>
         <p>要約統計量、度数表、ロジスティック回帰分析を用いてデータを解析しています。</p>
         <p><strong>使用技術：</strong>SAS</p>
-        <a href="docs/titanic-analysis-thesis.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+
+        <div class="store-links">
+          <a href="docs/titanic-analysis-thesis.pdf" target="_blank" rel="noopener noreferrer" class="github-button">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/pdf.png" alt="PDF Icon" class="github-icon">
+            Open PDF
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-      <div class="skill-icons">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" title="Swift" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
-    <img src="images/sas-logo.png" alt="SAS" title="SAS" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
-      </div>
+    <div class="skill-icons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift"
+        title="Swift" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+        title="Python" />
+      <img src="images/sas-logo.png" alt="SAS" title="SAS" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+        title="HTML5" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"
+        title="JavaScript" />
+    </div>
   </section>
 
   <section id="contact">
@@ -141,4 +168,5 @@
 
   <script src="scripts.js"></script>
 </body>
+
 </html>
