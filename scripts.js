@@ -26,3 +26,23 @@ window.addEventListener('click', function (event) {
     }
   });
 });
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    setTimeout(() => {
+      loader.style.transition = "opacity 0.5s ease";
+      loader.style.opacity = 0;
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500); // フェードアウト時間
+    }, 1500); // 表示させておく時間
+  }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.setAttribute("draggable", "false");
+  });
+});
