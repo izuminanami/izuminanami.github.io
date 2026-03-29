@@ -1,12 +1,13 @@
 :root {
-  --bg-main: #1a1a1a;
-  --bg-content: #222;
-  --text-base: #fdfaf0;
-  --accent-orange: #e04e0e;
-  --accent-yellow: #e0b02a;
-  --accent-green: #55cc77;
-  --accent-grey: #333;
-  --arrow-green: #55cc77;
+  --bg-main: #1d1f21;
+  --bg-content: #282a2e;
+  --text-base: #fdf1c2;
+  --accent-orange: #e75300;
+  --accent-yellow: #e29600;
+  --accent-green: #569f65;
+  --accent-blue: #278789;
+  --gradient-accent: linear-gradient(to right, #e75300, #e29600, #569f65, #278789, #685c53, #685c53);
+  
   --font-mono: 'Courier New', Courier, monospace;
   --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -28,14 +29,34 @@ body {
   line-height: 1.6;
 }
 
-header {
+body:before {
+  content: '';
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: rgba(26, 26, 26, 0.9);
+  height: 2px;
+  background: var(--gradient-accent);
+  z-index: 10001;
+}
+
+header {
+  position: fixed;
+  top: 2px;
+  width: 100%;
+  background-color: rgba(29, 31, 33, 0.95);
   padding: 10px 0;
   z-index: 1000;
-  border-bottom: 1px solid #333;
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gradient-accent);
 }
 
 nav ul {
@@ -68,7 +89,6 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   background-color: var(--bg-main);
-  color: var(--text-base);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,11 +104,11 @@ nav ul li a:hover {
 
 .loader-subtitle {
   font-size: 1.2rem;
-  color: #888;
+  color: var(--accent-yellow);
 }
 
 section {
-  padding: 80px 20px 40px;
+  padding: 100px 20px 40px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -96,32 +116,7 @@ section {
 h2 {
   font-family: var(--font-mono);
   font-size: 2rem;
-  color: var(--text-base);
   margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-  padding-left: 60px;
-}
-
-h2:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  background: linear-gradient(to right, 
-    var(--accent-orange) 25%, 
-    var(--accent-yellow) 25%, var(--accent-yellow) 50%, 
-    var(--accent-green) 50%, var(--accent-green) 75%, 
-    var(--accent-grey) 75%
-  );
-  transform: skewX(-15deg);
-  border-radius: 4px;
-}
-
-#profile {
-  text-align: center;
 }
 
 .profile-container {
@@ -131,7 +126,6 @@ h2:before {
   width: 200px;
   height: 200px;
   overflow: hidden;
-  margin: 0 auto 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
@@ -146,10 +140,6 @@ h2:before {
   font-size: 1.3rem;
 }
 
-#profile p {
-  color: var(--text-base);
-}
-
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -161,7 +151,6 @@ h2:before {
   background-color: var(--bg-content);
   padding: 15px;
   border-radius: 8px;
-  text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid transparent;
@@ -169,13 +158,13 @@ h2:before {
 
 .work-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .work-item:nth-child(1) { border-color: var(--accent-orange); }
-.work-item:nth-child(2) { border-color: var(--accent-green); }
-.work-item:nth-child(3) { border-color: var(--accent-yellow); }
-.work-item:nth-child(4) { border-color: var(--accent-grey); }
+.work-item:nth-child(2) { border-color: var(--accent-yellow); }
+.work-item:nth-child(3) { border-color: var(--accent-green); }
+.work-item:nth-child(4) { border-color: var(--accent-blue); }
 
 .app-icon {
   width: 100%;
@@ -191,7 +180,7 @@ h2:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(29, 31, 33, 0.7);
   z-index: 2000;
   overflow: auto;
   opacity: 0;
@@ -204,15 +193,14 @@ h2:before {
 
 .modal-content {
   background-color: var(--bg-content);
-  color: var(--text-base);
   margin: 10% auto;
   padding: 30px;
   border-radius: 8px;
   width: 90%;
   max-width: 700px;
   position: relative;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-  border: 1px solid #333;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+  border: 1px solid var(--text-base);
   transform: translateY(-20px);
   transition: transform 0.3s ease;
 }
@@ -236,24 +224,17 @@ h2:before {
 }
 
 .modal-content h2 {
-  color: var(--text-base);
-  margin-bottom: 20px;
-  padding-left: 0;
-}
-
-.modal-content h2:before {
-  display: none;
+  margin-bottom: 5px;
 }
 
 .modal-content strong {
-  color: var(--accent-orange);
+  color: var(--accent-yellow);
 }
 
 .store-links {
   margin-top: 25px;
   display: flex;
   gap: 15px;
-  justify-content: center;
 }
 
 .store-button {
@@ -266,24 +247,8 @@ h2:before {
   transform: scale(1.05);
 }
 
-#modal-sas a[href*="github.com"] {
-  background-color: var(--accent-yellow);
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-#modal-sas a[href*="github.com"]:hover {
-  background-color: var(--text-base);
-}
-
 .skill-icons {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -304,16 +269,11 @@ h2:before {
 }
 
 .skill-icons img[title] {
-  color: var(--text-base);
   font-family: var(--font-mono);
 }
 
-#contact {
-  text-align: center;
-}
-
 #contact a {
-  color: var(--arrow-green);
+  color: var(--accent-blue);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 1.3rem;
@@ -328,24 +288,14 @@ h2:before {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(26, 26, 26, 0.9);
-  color: var(--text-base);
+  background-color: rgba(29, 31, 33, 0.95);
   font-family: var(--font-mono);
-  border-top: 1px solid #333;
+  border-top: 1px solid rgba(253, 241, 194, 0.2);
 }
 
 @media (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-  .loader-name {
-    font-size: 2rem;
-  }
-  .profile-container {
-    width: 150px;
-    height: 150px;
-  }
-  .works-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
+  h2 { font-size: 1.5rem; }
+  .loader-name { font-size: 2rem; }
+  .profile-container { width: 150px; height: 150px; }
+  .works-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 }
