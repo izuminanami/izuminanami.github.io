@@ -26,8 +26,18 @@ const worksData = {
       'これまでExcelで行っていたエントリーシートの提出・管理をアプリ化することで、運営の負担軽減を目的に開発しました。',
       'GoogleAppsScriptを用いてデータを管理し、タイムテーブルもワンタップで自動作成できるように設計しています。'
     ],
-    lang: 'Swift, Google Apps Script', lib: 'SwiftUI, StoreKit, Network, Alamofire, SwiftyJSON', tool: 'Git, Google AdMob',
+    lang: 'Swift', lib: 'SwiftUI, StoreKit, Network, Alamofire, SwiftyJSON', tool: 'Google Apps Script, GitHub, Google AdMob',
     links: [{ url: 'https://apps.apple.com/app/id6745217075', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }, { url: 'https://github.com/izuminanami/ESHub', img: 'images/github-badge.png', alt: 'View Source on GitHub' }]
+  },
+  'wejet': {
+    title: 'WeJet', date: '2025/8/22 配信開始',
+    description: [
+      'ウィジェットを受信箱とする、新しい体験ができるSNSです。',
+      'ホーム画面のウィジェットに直接メッセージが届く仕組みにより、アプリを開く手間なくシームレスなコミュニケーションを実現しました。',
+      'Firebaseを活用し、WidgetKit特有の更新頻度制限を考慮したアーキテクチャを設計しました。'
+    ],
+    lang: 'Swift', lib: 'SwiftUI, UIKit, WidgetKit, AVFoundation, FirebaseAuth, FirebaseStorage', tool: 'Firebase, GitHub, Google AdMob',
+    links: [{ url: 'https://apps.apple.com/us/app/wejet/id6751197779', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
   },
   'sas': {
     title: 'タイタニック号生存に関する解析', date: '2025/1/29 完成',
@@ -36,7 +46,7 @@ const worksData = {
       '人口統計学的および社会経済的要因が、タイタニック号における生存率にどのような影響を与えたかを明らかにすることを目的としました。',
       '要約統計量、度数表、ロジスティック回帰分析を用いてデータを解析しています。'
     ],
-    lang: 'SAS',
+    lang: 'SAS', tool: 'Word',
     links: [{ url: 'docs/titanic-analysis-thesis.pdf', img: 'images/paper-badge.png', alt: 'View the Full Paper' }]
   }
 };
