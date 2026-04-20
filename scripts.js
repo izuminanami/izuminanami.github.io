@@ -4,29 +4,29 @@ const worksData = {
     description: [
       'ユニークでクリエイティブな写真を撮影できるカメラアプリです。',
       '集合写真や風景写真の撮影時に、記録のあり方を広げることを目的として開発しました。',
-      'シャッターボタンの挙動や撮影の流れにこだわるため、AVFoundationを採用しています。'
+      'シャッターボタンの挙動や撮影の流れにこだわるため、AVFoundationを用いて1から設計しました。'
     ],
     lang: 'Swift', lib: 'SwiftUI, AVFoundation', tool: 'Google AdMob',
     links: [{ url: 'https://apps.apple.com/app/id6480430036', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
   },
-  'oksh': {
-    title: 'おかしゅー道場', date: '2024/6/8 配信開始',
+  'omaebi': {
+    title: 'おまかせエビングハウスくん', date: '2025/2/5 配信開始',
     description: [
-      '初心者から上級者まで楽しめる、あらゆるレベルに対応したドラム演奏アプリです。',
-      'インフルエンサーのファンに向けて、打楽器の楽しさや魅力を伝えることを目的に開発しました。',
-      'ビジュアルはBlenderで制作し、Firebaseによるタップ数ランキング機能を導入することで、継続的なユーザーの獲得を図りました。'
+      'エビングハウスの忘却曲線を活用した復習管理アプリです。',
+      '自信の暗記への苦手意識から、暗記の効率を最大化することを目指しました。',
+      '学習内容の登録からリマインド通知まで、直感的に行えるよう実装しました。'
     ],
-    lang: 'Swift', lib: 'SwiftUI, AVFoundation, SwiftGif, WidgetKit', tool: 'Blender, Firebase, Google AdMob',
-    links: [{ url: 'https://apps.apple.com/app/id6504088528', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
+    lang: 'Swift', lib: 'SwiftUI', tool: 'Google AdMob',
+    links: [{ url: 'https://apps.apple.com/app/id6741511552', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
   },
   'es': {
     title: 'ESHub', date: '2025/4/30 配信開始',
     description: [
       '音楽イベントのエントリーシート提出・管理を効率化するアプリです。',
-      'これまでExcelで行っていたエントリーシートの提出・管理をアプリ化することで、運営の負担軽減を目的に開発しました。',
-      'GoogleAppsScriptを用いてデータを管理し、タイムテーブルもワンタップで自動作成できるように設計しています。'
+      'これまで紙媒体で行われていたエントリーシートの提出・管理をアプリ化することで、運営の負担軽減を目的に開発しました。',
+      'Firestoreを用いてデータを管理し、タイムテーブル作成まで行えるように設計しています。'
     ],
-    lang: 'Swift', lib: 'SwiftUI, StoreKit, Network, Alamofire, SwiftyJSON', tool: 'Google Apps Script, GitHub, Google AdMob',
+    lang: 'Swift', lib: 'SwiftUI, StoreKit, Network', tool: 'Firebase(Firestore), GitHub, Google AdMob',
     links: [{ url: 'https://apps.apple.com/app/id6745217075', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }, { url: 'https://github.com/izuminanami/ESHub', img: 'images/github-badge.png', alt: 'View Source on GitHub' }]
   },
   'wejet': {
@@ -36,7 +36,7 @@ const worksData = {
       'ホーム画面のウィジェットに直接メッセージが届く仕組みにより、アプリを開く手間なくシームレスなコミュニケーションを実現しました。',
       'Firebaseを活用し、WidgetKit特有の更新頻度制限を考慮したアーキテクチャを設計しました。'
     ],
-    lang: 'Swift', lib: 'SwiftUI, UIKit, WidgetKit, AVFoundation, FirebaseAuth, FirebaseStorage', tool: 'Firebase, GitHub, Google AdMob',
+    lang: 'Swift', lib: 'SwiftUI, WidgetKit, AVFoundation', tool: 'Firebase(Firestore, Storage, Authentication), GitHub, Google AdMob',
     links: [{ url: 'https://apps.apple.com/us/app/wejet/id6751197779', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
   },
   'sas': {
