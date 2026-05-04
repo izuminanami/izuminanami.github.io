@@ -17,7 +17,7 @@ const worksData = {
       '学習内容の登録からリマインド通知まで、直感的に行えるよう実装しました。'
     ],
     lang: 'Swift', lib: 'SwiftUI', tool: 'Google AdMob',
-    links: [{ url: 'https://apps.apple.com/app/id6741511552', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
+    links: [{ url: 'https://apps.apple.com/app/id6741511552', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }, { url: 'https://github.com/izuminanami/EbbinghausReminder', img: 'images/github-badge.png', alt: 'View Source on GitHub' }]
   },
   'es': {
     title: 'ESHub', date: '2025/4/30 配信開始',
