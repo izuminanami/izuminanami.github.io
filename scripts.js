@@ -39,16 +39,6 @@ const worksData = {
     lang: 'Swift', lib: 'SwiftUI, WidgetKit, AVFoundation', tool: 'Firebase(Firestore, Storage, Authentication), GitHub, Google AdMob',
     links: [{ url: 'https://apps.apple.com/us/app/wejet/id6751197779', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
   },
-  'ringconn': {
-    title: 'RingConn振動', date: '2026/10/19 開発',
-    description: [
-      'スマートリング「RingConn Gen 3」を、iPhoneのショートカットから振動させるアプリです。',
-      '純正アプリにない「リングを任意のタイミングで振動させる」機能を、自動化に組み込めるよう開発しました。',
-      'CoreBluetoothでリングに直接接続し、App Intentsによりアプリ画面を開かずにショートカットから実行できるよう設計しています。'
-    ],
-    lang: 'Swift', lib: 'SwiftUI, CoreBluetooth, App Intents', tool: 'GitHub',
-    links: [{ url: 'https://github.com/izuminanami/RingConn-Gen3-Vibration-Control-via-Shortcuts', img: 'images/github-badge.png', alt: 'View Source on GitHub' }]
-  },
   'sas': {
     title: 'タイタニック号生存に関する解析', date: '2025/1/29 完成',
     description: [
