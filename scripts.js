@@ -38,16 +38,6 @@ const worksData = {
     ],
     lang: 'Swift', lib: 'SwiftUI, WidgetKit, AVFoundation', tool: 'Firebase(Firestore, Storage, Authentication), GitHub, Google AdMob',
     links: [{ url: 'https://apps.apple.com/us/app/wejet/id6751197779', img: 'images/appstore-badge.png', alt: 'Download on the App Store' }]
-  },
-  'sas': {
-    title: 'タイタニック号生存に関する解析', date: '2025/1/29 完成',
-    description: [
-      'SASを用いて、タイタニック号の生存率に関する統計的分析を行いました。',
-      '人口統計学的および社会経済的要因が、タイタニック号における生存率にどのような影響を与えたかを明らかにすることを目的としました。',
-      '要約統計量、度数表、ロジスティック回帰分析を用いてデータを解析しています。'
-    ],
-    lang: 'SAS', tool: 'Word',
-    links: [{ url: 'docs/titanic-analysis-thesis.pdf', img: 'images/paper-badge.png', alt: 'View the Full Paper' }]
   }
 };
 
